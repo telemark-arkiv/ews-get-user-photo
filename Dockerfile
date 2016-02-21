@@ -19,7 +19,7 @@ ENV EWS_PASS "pass"
 ENV EWS_DOMAIN "domain"
 
 # Installs git
-RUN apk add --update git libjpeg cairo-dev pango giflib && rm -rf /var/cache/apk/*
+RUN apk add --update git libjpeg cairo-dev pango giflib g++ make && rm -rf /var/cache/apk/*
 
 # Bundle app source
 COPY . /src
