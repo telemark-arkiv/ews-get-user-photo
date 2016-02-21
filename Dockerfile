@@ -4,8 +4,8 @@
 #
 ###########################################################
 
-# Setting the base to nodejs 4.3.0
-FROM mhart/alpine-node:4.3.0
+# Setting the base to nodejs 4.3.1
+FROM mhart/alpine-node:4.3.1
 
 # Maintainer
 MAINTAINER Jonas Enge
