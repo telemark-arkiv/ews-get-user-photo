@@ -3,7 +3,6 @@
   "description": "API to download and base64 photo from EWS",
   "version": "1.0.1",
   "license": "MIT",
-  "private": true,
   "author": {
     "name": "Jonas Enge",
     "email": "jonas.enge@t-fk.no",
