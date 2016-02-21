@@ -20,6 +20,7 @@ ENV EWS_DOMAIN "domain"
 
 # Installs git
 RUN apk add --update git && rm -rf /var/cache/apk/*
+RUN apk add --update cairo-dev && rm -rf /var/cache/apk/*
 
 # Bundle app source
 COPY . /src
