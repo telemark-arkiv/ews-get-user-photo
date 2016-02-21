@@ -1,7 +1,7 @@
 {
   "name": "ews-get-user-photo",
   "description": "API to download and base64 photo from EWS",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "private": true,
   "author": {
