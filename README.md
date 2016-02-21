@@ -9,4 +9,4 @@ $ npm start
 ```
 
 
-See http://localhost/docs
+See http://localhost:3000/docs
