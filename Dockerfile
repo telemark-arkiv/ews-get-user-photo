@@ -5,7 +5,7 @@
 ###########################################################
 
 # Setting the base to nodejs 4.3.1
-FROM mhart/alpine-node:4.3.1
+FROM node:4.3.1-slim
 
 # Maintainer
 MAINTAINER Jonas Enge
@@ -19,7 +19,7 @@ ENV EWS_PASS "pass"
 ENV EWS_DOMAIN "domain"
 
 # Installs git
-RUN apk add --update git libjpeg cairo-dev pango giflib g++ make && rm -rf /var/cache/apk/*
+RUN apt-get update install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
 
 # Bundle app source
 COPY . /src
