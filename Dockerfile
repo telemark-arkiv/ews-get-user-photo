@@ -12,6 +12,12 @@ MAINTAINER Jonas Enge
 
 #### Begin setup ####
 
+# Environment
+ENV EWS_URL "https://epost.vfk.no/ews/Exchange.asmx/s/GetUserPhoto?email=@username@vfk.no&size=HR48x48"
+ENV EWS_USER "user"
+ENV EWS_PASS "pass"
+ENV EWS_DOMAIN "domain"
+
 # Installs git
 RUN apk add --update git && rm -rf /var/cache/apk/*
 
