@@ -26,13 +26,22 @@
     "coveralls": "tap --cov --coverage-report=lcov test/*.js && cat coverage/lcov.info | coveralls",
     "generate": "node utils/generateTestToken.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/telemark/ews-get-user-photo.git"
+  },
+  "bugs": {
+    "url": "http://github.com/telemark/ews-get-user-photo/issues"
+  },
+  "license": "MIT",
   "dependencies": {
     "hapi": "^13.0.0",
     "inert": "^3.2.0",
     "joi": "^8.0.2",
     "lout": "^9.0.0",
     "vision": "^4.0.1",
-    "httpntlm": "^1.5.3"
+    "httpntlm": "^1.5.3",
+    "base64resize": "^1.0.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.6",

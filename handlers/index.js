@@ -22,6 +22,23 @@ function getPublicResponse (request, reply) {
  *
  */
 
+function resizeImage (src, type, size, callback) {
+  var base64resize = require('base64resize')
+  var img = 'data:' + type + ';base64,' + src
+  var options = {
+    src: img,
+    width: size,
+    height: size,
+    withPrefix: false
+  }
+  base64resize(options, function (err, resized) {
+    if (err) {
+      return callback(err)
+    }
+    return callback(resized)
+  })
+}
+
 function base64image (image, username) {
   var res = {
     username: username,
@@ -45,8 +62,14 @@ function getUserPhoto (request, reply) {
     domain: config.domain,
     binary: true
   }
-  httpntlm.get(options, function (err, response) {
-    reply(err || base64image(response.body, username))
+  httpntlm.get(options, function (error, response) {
+    if (!size) {
+      reply(error || base64image(response.body, username))
+    } else {
+      resizeImage(response.body, response.headers['content-type'], size, function (err, resizedImage) {
+        reply(err || base64image(resizedImage, username))
+      })
+    }
   })
 }
 
