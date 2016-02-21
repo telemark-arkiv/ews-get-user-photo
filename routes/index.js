@@ -21,6 +21,20 @@ var routes = [
         }
       }
     }
+  },
+ {
+    method: 'GET',
+    path: '/{username}/photo/size/{size}',
+    handler: handlers.getUserPhotoResize,
+    config: {
+      description: 'Return base64 of users photo',
+      validate: {
+        params: {
+          username: Joi.string().min(3).max(40).required(),
+          size: Joi.number().min(5).max(140).required()
+        }
+      }
+    }
   }
 ]
 
