@@ -1,6 +1,7 @@
 'use strict'
 
 var config = require('../config')
+var generateUrl = require('../lib/generate-url')
 
 /*!
  *
@@ -21,18 +22,22 @@ function getPublicResponse (request, reply) {
  *
  */
 
-function base64image (image, username, callback) {
+function base64image (image, username) {
   var res = {
     username: username,
     data: new Buffer(image).toString('base64')
   }
-  return callback(res)
+  return res
 }
 
 function getUserPhoto (request, reply) {
   var httpntlm = require('httpntlm')
   var username = request.params.username
-  var url = config.url.replace('@username', username)
+  var size = request.params.size
+  var url = generateUrl({
+    user: username,
+    size: size
+  })
   var options = {
     url: url,
     username: config.user,
@@ -41,13 +46,7 @@ function getUserPhoto (request, reply) {
     binary: true
   }
   httpntlm.get(options, function (err, response) {
-    if (err) {
-      reply(err)
-    }
-    var image = response.body
-    base64image(image, username, function (res) {
-      reply(res)
-    })
+    reply(err || base64image(response.body, username))
   })
 }
 
