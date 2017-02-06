@@ -35,9 +35,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "hapi": "^13.0.0",
-    "inert": "^3.2.0",
-    "joi": "^8.0.2",
+    "hapi": "^16.1.0",
+    "inert": "^4.1.0",
+    "joi": "^10.2.1",
     "lout": "^9.0.0",
     "vision": "^4.0.1",
     "httpntlm": "^1.5.3",
@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.6",
-    "standard": "^6.0.7",
-    "tap": "^5.6.0"
+    "standard": "^8.6.0",
+    "tap": "^10.0.2"
   }
 }
