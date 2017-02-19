@@ -40,7 +40,7 @@
     "joi": "^10.2.1",
     "lout": "^9.0.0",
     "vision": "^4.0.1",
-    "httpntlm": "^1.5.3",
+    "httpntlm": "1.7.3",
     "base64resize": "^1.0.0"
   },
   "devDependencies": {
