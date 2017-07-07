@@ -1,7 +1,7 @@
 {
   "name": "ews-get-user-photo",
   "description": "API to download and base64 photo from EWS",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "license": "MIT",
   "author": {
     "name": "Jonas Enge",
@@ -33,12 +33,11 @@
   "bugs": {
     "url": "http://github.com/telemark/ews-get-user-photo/issues"
   },
-  "license": "MIT",
   "dependencies": {
     "hapi": "^16.1.0",
     "inert": "^4.1.0",
     "joi": "^10.2.1",
-    "lout": "^10.0.1",
+    "lout": "^9.0.0",
     "vision": "^4.0.1",
     "httpntlm": "^1.5.3",
     "base64resize": "^1.0.0"
